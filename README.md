@@ -4,7 +4,7 @@ This is a basic React app for practice interviews. In the interview, you'll be a
 
 ## Preparing for the interview
 1. Fork this repo and clone your fork to your computer.
-1. Make sure that `npm start` works and that you can view and edit the site.
+1. Make sure that `npm install` and `npm start` work, and that you can view and edit the site.
 1. Familiarize yourself with the application.
 1. Think about the possible features below and how you'd implement them. (Don't code them up yet.)
 
@@ -23,6 +23,23 @@ This is a basic React app for practice interviews. In the interview, you'll be a
 1. Write the code. This is a pair programming exercise, so be sure to vocalize your thoughts.
 
 ## Overview of the base application
+The application is an online menu for a pizza place. It displays the items on the restaurant's menu but currently has no other functionality.
+
+### Components
+The components are rendered in the following hierarchy:
+```
+<App />
+    <Menu />
+        <MenuItem />
+        <MenuItem />
+        ...
+        <MenuItem />
+```
+
+### Data
+The menu items are pulled from `./data.js` by the `<Menu />` component. The data is a list of objects. Each object represents a menu item. Not all of the item properties are currently displayed on the site.
+
+Each menu item also has a list of `tags`. Notice that the same tag may appear in more than one item's tag list.
 
 ## Possible features
 You may be asked to build one or more of these features (or a feature not on the list).
