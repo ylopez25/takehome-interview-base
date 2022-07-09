@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Takehome Interview Practice App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a basic React app for practice interviews. In the interview, you'll be asked to add a new feature to the application.
 
-## Available Scripts
+## Preparing for the interview
+1. Fork this repo and clone your fork to your computer.
+1. Make sure that `npm start` works and that you can view and edit the site.
+1. Familiarize yourself with the application.
+1. Think about the possible features below and how you'd implement them. (Don't code them up yet.)
 
-In the project directory, you can run:
+## During the interview
+1. The interviewer will ask you to walk them through the app and answer your questions about it. This will make sure you both agree on how the application works.
+1. The interviewer will tell you a feature to implement. Ask lots of questions and make sure you understand what you need to build.
+1. Before writing code, come up with a plan. Some things to think about:
+    
+    - What parts of the app need to be refactored?
+    - What will you need to create from scratch?
+    - Where will you need to add props?
+    - Where will you need to add state? What is the best data type for your state?
+    - Where will you need to add user interactions? How do these interactions work with your state?
+    - What unexpected states or other edge cases will you need to handle?
+    - How can you break up the work into stages? How can you test or verify your code as you go?
+1. Write the code. This is a pair programming exercise, so be sure to vocalize your thoughts.
 
-### `npm start`
+## Overview of the base application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Possible features
+You may be asked to build one or more of these features (or a feature not on the list).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Expand / Collapse**: Add a `Show more` button on each menu item. When clicked:
+    - the menu item expands (no animation necessary)
+    - the user can see the item's long description and/or toppings
+    - the button now says `Show less` and will collapse the item when it is cicked
+    - **Bonus**: At the top of the list add a `Expand / Collapse All` button that will expand or collapse all of the items.
+1. **Search**: Add a search input at the top of the menu. As the user types in the input:
+    
+    - the list will show only menu items whose name or short description include the search term
+    - the search should be case-insensitive
+    - **Bonus**: Show a "No results for {search term}" message when needed.
+1. **Filter**: Create a list of **distinct** tags from the data. For each tag:
+    - Add a button at the top of the list with the name of the tag as the button text
+    - When the user clicks on the button, the menu should display only the items that have that tag.
+    - When the user clicks on the button again, the filter should clear (display all items again)
+    - If one filter is selected and the user clicks a different filter button, the menu should filter on the new button's tag.
+    - **Bonus 1**: Change the button color when a filter is active.
+    - **Bonus 2**: Allow the user to select multiple tags to filter. Example: If the user clicks `thick crust` and `vegetarian`, display only the items that are thick crust _and_ vegetarian.
 
-### `npm test`
+## Tips and tricks
+- **Testing and verifying**: You can use the React Dev tools to check that your state is working before you wire up buttons and user interactions.
+- **Managing state**: Try to keep all of your state together and lift it as high in the app as possible (but not too high)
+- **State, display, and CSS**: When do we need to use CSS to properly show a user a state change? When can we do this without CSS?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
