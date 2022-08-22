@@ -5,6 +5,17 @@ import MenuItem from './MenuItem';
 
 const Menu = () => {
 const [open, setOpen] = useState([]);
+const [writing, setWriting] = useState('');
+
+const search = (e) => {
+setWriting(e.target.value)
+}
+
+const filteredData = (writing) => {
+let text = writing.toLowerCase();
+//return if name includes text or if short des includes text
+return data.filter(el => el.name.toLowerCase().includes(text) || el.shortDescription.toLowerCase().includes(text))
+}
 
 const expandAll = () => {
 setOpen(data.map(el => el.id))
@@ -28,7 +39,8 @@ const showLongDes = (id) => {
       <h1>Our Menu</h1>
       <button onClick = {expandAll}>expand</button>
       <button onClick = {collapseAll}>collapse</button>
-      {data.map((item) => (
+      <input type="text" value={writing} onChange={search}/>
+      {filteredData(writing).map((item) => (
         <MenuItem key={item.id} item={item} onClick={() => showLongDes(item.id)} open={open.includes(item.id)}/>
       ))}
     </article>
