@@ -10,7 +10,7 @@ const MenuItem = ({ item, onClick, open }) => {
         <li>price: ${price} </li>
         <li>{shortDescription}</li>
         <button onClick={onClick}>
-          <i>{open ? "collapse" : "expand"}</i>
+          <i>{open ? "Show less" : "Show more"}</i>
         </button>
         <li>{open ? longDescription : null}</li>
       </ul>
